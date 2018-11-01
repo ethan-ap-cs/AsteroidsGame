@@ -1,4 +1,5 @@
-class Spaceship extends Floater{   
+class Spaceship extends Floater{
+  public double myAcceleration;   
   public Spaceship(){
     myColor =  color(255);
     myCenterX = myCenterY = 200;
@@ -14,6 +15,7 @@ class Spaceship extends Floater{
     yCorners[2] = 8;
     xCorners[3] = 16;
     yCorners[3] = 0;
+    myAcceleration = 0;
   }
   public void setX(int x){
     myCenterX = x;
@@ -45,8 +47,18 @@ class Spaceship extends Floater{
   public double getPointDirection(){
     return myPointDirection;
   }
-  public void show ()  //Draws the floater at the current position  
-  {             
+  // public double getAcceleration(){
+  //   return Math.sqrt(Math.s);
+  // }
+  public void accelerate (double dAmount){
+    myAcceleration = dAmount;
+    //convert the current direction the floater is pointing to radians    
+    double dRadians =myPointDirection*(Math.PI/180);     
+    //change coordinates of direction of travel    
+    myDirectionX += ((dAmount) * Math.cos(dRadians));    
+    myDirectionY += ((dAmount) * Math.sin(dRadians));       
+  }
+  public void show (){             
     fill(myColor);   
     stroke(myColor);    
     
@@ -67,7 +79,12 @@ class Spaceship extends Floater{
     }
     endShape(CLOSE);
     //jets
-    
+    if(!(myAcceleration == 0)){
+      System.out.println(myAcceleration);
+      stroke(255, 102, 0);
+      fill(255, 102, 0);
+      triangle(-7, 0, -14, 4, -14, -4);
+    }
     //"unrotate" and "untranslate" in reverse order
     rotate(-1*dRadians);
     translate(-1*(float)myCenterX, -1*(float)myCenterY);

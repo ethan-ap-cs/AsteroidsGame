@@ -56,7 +56,7 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     {     
       myCenterY = height;    
     }   
-  }   
+  }
   public void show ()  //Draws the floater at the current position  
   {             
     fill(myColor);   
