@@ -1,5 +1,5 @@
 class Asteroid extends Floater{
-	private int size = 20;
+	private int size = 30;
 	private int rotatationSpeed;
 	public Asteroid(){
 		myColor =  color(0,255,100);
@@ -46,5 +46,9 @@ class Asteroid extends Floater{
 	}
 	public double getPointDirection(){
 		return myPointDirection;
+	}
+	public void move(){
+		turn(rotatationSpeed);
+		super.move();
 	}
 }

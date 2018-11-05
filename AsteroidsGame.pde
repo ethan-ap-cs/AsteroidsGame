@@ -21,7 +21,9 @@ public void draw(){
 		z[i].show();
 	}
 	for (int i = 0; i < a.length; i++){
+		a[i].move();
 		a[i].show();
+		a[i].accelerate(.4);
 	}
 	s.show();
 	s.move();
