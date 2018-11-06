@@ -1,0 +1,2 @@
+- collision script
+- working accelleration

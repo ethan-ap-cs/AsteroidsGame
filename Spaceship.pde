@@ -47,9 +47,6 @@ class Spaceship extends Floater{
   public double getPointDirection(){
     return myPointDirection;
   }
-  // public double getAcceleration(){
-  //   return Math.sqrt(Math.s);
-  // }
   public void accelerate (double dAmount){
     myAcceleration = dAmount;
     //convert the current direction the floater is pointing to radians    
