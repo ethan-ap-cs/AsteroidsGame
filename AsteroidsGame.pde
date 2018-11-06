@@ -23,7 +23,6 @@ public void draw(){
 	for (int i = 0; i < a.length; i++){
 		a[i].move();
 		a[i].show();
-		//a[i].setPointDirection((int)(Math.random()*360));
 		a[i].setDirectionX(.7);
 		a[i].setDirectionY(.7);
 	}
