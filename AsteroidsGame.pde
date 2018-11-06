@@ -6,7 +6,7 @@ public void setup(){
 	background(0);
 	size(400, 400);
 	s = new Spaceship();
-	a = new Asteroid[30];
+	a = new Asteroid[20];
 	for (int i = 0; i < a.length; i++){
 		a[i] = new Asteroid();
 	}
@@ -23,23 +23,25 @@ public void draw(){
 	for (int i = 0; i < a.length; i++){
 		a[i].move();
 		a[i].show();
-		a[i].accelerate(.4);
+		//a[i].setPointDirection((int)(Math.random()*360));
+		a[i].setDirectionX(.7);
+		a[i].setDirectionY(.7);
 	}
 	s.show();
 	s.move();
 }
 public void keyPressed(){
 	if (key == 'w'){
-		s.accelerate(0.9);
+		s.accelerate(1.1);
 	}
 	if (key == 's'){
-		s.accelerate(-0.9);
+		s.accelerate(-1.1);
 	}
 	if (key == 'a'){
-		s.turn(10);
+		s.turn(12);
 	}
 	if (key == 'd'){
-		s.turn(-10);
+		s.turn(-12);
 	}
 	if (key == 'z'){
 		s.setDirectionX(0);
