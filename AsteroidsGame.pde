@@ -7,8 +7,10 @@ public void setup(){
 	size(400, 400);
 	s = new Spaceship();
 	a = new ArrayList <Asteroid> ();
-	for (int i = 0; i < a.size(); i++){
+	for (int i = 0; i < 20; i++){
 		a.add(new Asteroid());
+		a.get(i).setDirectionX((Math.random()*3 -1)/2);
+		a.get(i).setDirectionY((Math.random()*3 -1)/2);
 	}
 	z = new Star[150];
 	for (int i = 0; i < z.length; i++){
@@ -21,10 +23,8 @@ public void draw(){
 		z[i].show();
 	}
 	for (int i = 0; i < a.size(); i++){
-		a.get(i).move();
 		a.get(i).show();
-		a.get(i).setDirectionX(.7);
-		a.get(i).setDirectionY(.7);
+		a.get(i).move();
 	}
 	s.show();
 	s.move();
