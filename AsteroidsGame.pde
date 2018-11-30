@@ -25,6 +25,9 @@ public void draw(){
 	for (int i = 0; i < a.size(); i++){
 		a.get(i).show();
 		a.get(i).move();
+		if(dist(s.getX(), s.getY(), a.get(i).getX(), a.get(i).getY()) <= 18){
+			a.remove(i);
+		}
 	}
 	s.show();
 	s.move();
