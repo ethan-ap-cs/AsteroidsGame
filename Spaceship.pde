@@ -77,7 +77,6 @@ class Spaceship extends Floater{
     endShape(CLOSE);
     //jets
     if(!(myAcceleration == 0)){
-      System.out.println(myAcceleration);
       stroke(255, 102, 0);
       fill(255, 102, 0);
       triangle(-7, 0, -14, 4, -14, -4);
