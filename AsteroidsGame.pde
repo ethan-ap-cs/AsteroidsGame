@@ -2,6 +2,7 @@
 Spaceship s;
 Star [] z;
 ArrayList <Asteroid> a;
+ArrayList <Bullet> b;
 public void setup(){
 	background(0);
 	size(400, 400);
@@ -33,6 +34,11 @@ public void draw(){
 	s.move();
 }
 public void keyPressed(){
+	if (key == ' '){
+		b.add(new Bullet());
+		b.get(b.size()).show();
+		b.get(b.size()).move();
+	}
 	if (key == 'w'){
 		s.accelerate(1.1);
 	}
