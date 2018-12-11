@@ -8,6 +8,7 @@ public void setup(){
 	size(400, 400);
 	s = new Spaceship();
 	a = new ArrayList <Asteroid> ();
+	b = new ArrayList <Bullet> ();
 	for (int i = 0; i < 20; i++){
 		a.add(new Asteroid());
 		a.get(i).setDirectionX((Math.random()*3 -1)/2);
@@ -34,10 +35,10 @@ public void draw(){
 	s.move();
 }
 public void keyPressed(){
-	if (key == ' '){
-		b.add(new Bullet());
-		b.get(b.size()).show();
-		b.get(b.size()).move();
+	if (key == 'f'){
+		b.add(new Bullet(s));
+		b.get(b.size() - 1).show();
+		b.get(b.size() - 1).move();
 	}
 	if (key == 'w'){
 		s.accelerate(1.1);
