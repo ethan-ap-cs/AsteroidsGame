@@ -24,6 +24,7 @@ public void draw(){
 	for (int i = 0; i < z.length; i++){
 		z[i].show();
 	}
+
 	for (int i = 0; i < a.size(); i++){
 		a.get(i).show();
 		a.get(i).move();
@@ -33,12 +34,14 @@ public void draw(){
 	}
 	s.show();
 	s.move();
+	for (int i = 0; i<b.size();i++){
+		b.get(i).show();
+		b.get(i).move();
+	}
 }
 public void keyPressed(){
 	if (key == 'f'){
 		b.add(new Bullet(s));
-		b.get(b.size() - 1).show();
-		b.get(b.size() - 1).move();
 	}
 	if (key == 'w'){
 		s.accelerate(1.1);

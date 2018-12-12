@@ -37,14 +37,15 @@ class Bullet extends Floater{
 		dRadians = myPointDirection*(Math.PI/180);
 		myDirectionX = 5 * Math.cos(dRadians) + theShip.getDirectionX();
 		myDirectionY = 5 * Math.sin(dRadians) + theShip.getDirectionY();
-//color		myColor = 255, 255, 255;
+		myColor = color(255, 255, 255);
+		System.out.println(myCenterX + ", " + myCenterY);
 	}
 	public void show(){
 		fill(myColor);
     	stroke(myColor);
     	//translate the (x,y) center of the ship to the correct position
-    	translate((float)myCenterX, (float)myCenterY);
     	ellipse((float)myCenterX, (float)myCenterY, 10, 10);
+    	//translate((float)myCenterX, (float)myCenterY);
 
 	}
 }
